@@ -1,5 +1,5 @@
 {
-  "name": "mcscop",
+  "name": "cop",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -34,14 +34,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/psmitty7373/copper.git"
+    "url": "git+https://github.com/psmitty7373/cop.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/psmitty7373/mcscop/issues"
+    "url": "https://github.com/psmitty7373/cop/issues"
   },
-  "homepage": "https://github.com/psmitty7373/mcscop#readme",
+  "homepage": "https://github.com/psmitty7373/cop#readme",
   "optionalDependencies": {
     "bufferutil": "^4.0.1"
   }

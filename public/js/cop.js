@@ -74,13 +74,13 @@ function checkIfObjectsLoaded() {
 // ---------------------------- SETTINGS COOKIE ----------------------------------
 function loadSettings() {
     if (decodeURIComponent(document.cookie) === '') {
-        document.cookie = "mcscop-settings=" + JSON.stringify(settings);
+        document.cookie = "cop-settings=" + JSON.stringify(settings);
     }
     var dc = decodeURIComponent(document.cookie);
     try {
-        settings = JSON.parse(dc.split('mcscop-settings=')[1]);
+        settings = JSON.parse(dc.split('cop-settings=')[1]);
     } catch (err) {
-        document.cookie = "mcscop-settings=" + JSON.stringify(settings);
+        document.cookie = "cop-settings=" + JSON.stringify(settings);
     }
     $('#diagramJumbo').height(settings.diagram);
     $('#bottomJumbo').height(settings.tables);
@@ -97,7 +97,7 @@ function updateSettings() {
     if (updateSettingsTimer)
         window.clearTimeout(updateSettingsTimer);
     updateSettingsTimer = setTimeout(function () {
-        document.cookie = "mcscop-settings=" + JSON.stringify(settings);
+        document.cookie = "cop-settings=" + JSON.stringify(settings);
     }, 100);
 }
 
@@ -615,11 +615,11 @@ $(window).on('load', function () {
 
     // ---------------------------- SOCKETS ----------------------------------
     if (location.protocol === 'https:') {
-        socket = new WebSocket('wss://' + window.location.host + '/mcscop/');
-        wsdb = new WebSocket('wss://' + window.location.host + '/mcscop/');
+        socket = new WebSocket('wss://' + window.location.host + '/cop/');
+        wsdb = new WebSocket('wss://' + window.location.host + '/cop/');
     } else {
-        socket = new WebSocket('ws://' + window.location.host + '/mcscop/');
-        wsdb = new WebSocket('ws://' + window.location.host + '/mcscop/');
+        socket = new WebSocket('ws://' + window.location.host + '/cop/');
+        wsdb = new WebSocket('ws://' + window.location.host + '/cop/');
     }
     shareDBConnection = new ShareDB.Connection(wsdb);
     wsdb.onopen = function () {

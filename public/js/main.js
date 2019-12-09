@@ -62,11 +62,11 @@ $(window).on('load', function () {
 
     // ---------------------------- SOCKETS ----------------------------------
     if (location.protocol === 'https:') {
-        socket = new WebSocket('wss://' + window.location.host + '/mcscop/');
-        wsdb = new WebSocket('wss://' + window.location.host + '/mcscop/');
+        socket = new WebSocket('wss://' + window.location.host + '/cop/');
+        wsdb = new WebSocket('wss://' + window.location.host + '/cop/');
     } else {
-        socket = new WebSocket('ws://' + window.location.host + '/mcscop/');
-        wsdb = new WebSocket('ws://' + window.location.host + '/mcscop/');
+        socket = new WebSocket('ws://' + window.location.host + '/cop/');
+        wsdb = new WebSocket('ws://' + window.location.host + '/cop/');
     }
 
     socket.onopen = function () {
